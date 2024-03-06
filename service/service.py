@@ -1,5 +1,5 @@
-from entities import Animal
-from exceptions import CustomException
+from domain.Animal import Animal
+from domain.exceptions import CustomException
 
 
 class Service:

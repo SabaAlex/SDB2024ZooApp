@@ -1,6 +1,6 @@
-from entities import Animal
-from exceptions import CustomException
-from service import Service
+from domain.Animal import Animal
+from domain.exceptions import CustomException
+from service.service import Service
 
 
 class UI:

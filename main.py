@@ -1,5 +1,5 @@
-from service import Service
-from ui import UI
+from UI.ui import UI
+from service.service import Service
 
 service = Service()
 ui = UI(service)
