@@ -26,7 +26,6 @@ class UI:
         except ValueError:
             raise CustomException('Animal age is not a number!')
 
-
     def __add_animal(self):
         name = input("Animal name: ")
         age = input("Animal age: ")
@@ -45,12 +44,12 @@ class UI:
         for animal in self.__service.get_all_animals():
             print(animal)
 
-
     def __average_animal_age(self):
         average_age = round(self.__service.average_age(), 2)
         print(f'The average age of all the animals is {average_age}')
 
     def run(self):
+        print("App started")
         while True:
             self.__print_menu()
             try:
