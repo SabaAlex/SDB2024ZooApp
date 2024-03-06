@@ -1,11 +1,11 @@
-from domain.Animal import Animal
+from domain.animal import Animal
 from domain.exceptions import CustomException
-from service.service import Service
+from service.animal_service import AnimalService
 
 
 class UI:
-    def __init__(self, service: Service):
-        self.__service = service
+    def __init__(self, animal_service: AnimalService):
+        self.__animal_service = animal_service
         self.__commands = {
             "1": self.__add_animal,
             "2": self.__delete_animal,
@@ -30,22 +30,22 @@ class UI:
         name = input("Animal name: ")
         age = input("Animal age: ")
         self.__validate_age(age)
-        self.__service.add_animal(Animal(name, int(age)))
+        self.__animal_service.add_animal(Animal(name, int(age)))
         print('Animal added!')
 
     def __delete_animal(self):
         name = input("Animal to delete name: ")
         age = input("Animal to delete age: ")
         self.__validate_age(age)
-        self.__service.delete_animal(Animal(name, int(age)))
+        self.__animal_service.delete_animal(Animal(name, int(age)))
         print('Animal deleted!')
 
     def __show_all_animals(self):
-        for animal in self.__service.get_all_animals():
+        for animal in self.__animal_service.get_all_animals():
             print(animal)
 
     def __average_animal_age(self):
-        average_age = round(self.__service.average_age(), 2)
+        average_age = round(self.__animal_service.average_age(), 2)
         print(f'The average age of all the animals is {average_age}')
 
     def run(self):

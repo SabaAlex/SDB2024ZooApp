@@ -1,7 +1,10 @@
 from UI.ui import UI
-from service.service import Service
+from domain.animal import Animal
+from repository.repository import Repository
+from service.animal_service import AnimalService
 
-service = Service()
-ui = UI(service)
+animal_repository = Repository([Animal('Rex', 2), Animal('Luna', 5)])
+animal_service = AnimalService(animal_repository)
+ui = UI(animal_service)
 
 ui.run()
