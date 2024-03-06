@@ -61,6 +61,6 @@ class UI:
                 if command in self.__commands:
                     self.__commands[command]()
                 else:
-                    print('Command does not exist!')
+                    print('Command does not exist.')
             except CustomException as error:
                 print(error)
